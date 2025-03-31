@@ -1,3 +1,5 @@
+import Badge from "./Components/Badge.jsx"
+
 export default function App() {
-  return <>hgelo</>;
+  return <>{/* <Badge color="red" isRounded={true} /> */}</>
 }
