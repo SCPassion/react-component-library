@@ -1,14 +1,10 @@
 import { IoCloudUploadOutline } from "react-icons/io5"
 
-export default function Card() {
+export default function Card({ children }) {
   return (
-    <section className="relative h-[208px] w-[384px] hover:drop-shadow-xl">
+    <section className="relative mb-1 h-[208px] w-[384px] hover:drop-shadow-xl">
       <div className="flex w-full flex-col justify-center gap-5 rounded-md bg-[#F9FAFB] px-6 py-8 text-center">
-        <h2 className="text-[#111827]">Easy Deployment</h2>
-        <p className="text-[#6B7280]">
-          Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-          magna sit morbi lobortis.
-        </p>
+        {children}
       </div>
       <IoCloudUploadOutline
         size={24}
