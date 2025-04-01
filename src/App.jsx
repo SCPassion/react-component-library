@@ -3,23 +3,13 @@ import Banner from "./Components/Banner.jsx"
 import Card from "./Components/Card/index.jsx"
 import Testimonial from "./Components/Testimonial/index.jsx"
 import ToastPopup from "./Components/ToastPopups/ToastPopup.jsx"
+import usePopup from "./Hooks/usePopup.js"
+
 import { createPortal } from "react-dom"
 import React from "react"
 
 export default function App() {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const canToggle = React.useRef(true)
-
-  function handleSubmit() {
-    if (!canToggle.current) return
-    setIsOpen((prevIsOpen) => !prevIsOpen)
-    canToggle.current = false
-
-    setTimeout(() => {
-      setIsOpen((prevIsOpen) => !prevIsOpen)
-      canToggle.current = true
-    }, 3000)
-  }
+  const [isOpen, handleSubmit] = usePopup()
 
   return (
     <div>
